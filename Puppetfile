@@ -21,6 +21,12 @@ def github(name, *args)
   end
 end
 
+def github_other(user, name, version, options = nil)
+  options ||= {}
+  options[:repo] ||= "#{user}/puppet-#{name}"
+  mod name, version, :github_tarball => options[:repo]
+end
+
 # Shortcut for a module under development
 def dev(name, *args)
   mod name, :path => "#{ENV['HOME']}/src/boxen/puppet-#{name}"
@@ -55,3 +61,27 @@ github "xquartz",    "1.1.0"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
+
+# for webs
+github "cyberduck", "1.0.1"
+github "chrome", "1.1.2"
+github "firefox", "1.1.7"
+github "skype", "1.0.8"
+github "dropbox", "1.2.0"
+# for media
+github "handbrake", "1.0.1"
+github "vlc", "1.0.5"
+# for development
+github "android", "1.1.0"
+github "heroku", "2.0.0"
+github "iterm2", "1.0.4"
+github "sourcetree", "1.0.0"
+github "virtualbox", "1.0.10"
+github "vagrant", "3.0.3"
+# other
+github "osx", "2.2.2"
+github "tunnelblick", "1.0.4"
+
+github_other "mrchrisadams", "omnidisksweeper", "0.0.2"
+#github_other "jozefizso", "sublime_text_3", "1.0.2"
+github_other "evalphobia", "sublime_text_3", "1.0.2b"
