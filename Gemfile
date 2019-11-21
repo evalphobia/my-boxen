@@ -11,7 +11,7 @@ gem "rake",                   "10.0.3"
 gem "rspec-puppet",           "0.1.6"
 
 group :development do
-  gem "aws-sdk", "~> 1.21"
+  gem "aws-sdk", "~> 1.27", ">= 1.27.0"
   gem "net-ssh"
-  gem "rbvmomi"
+  gem "rbvmomi", ">= 1.6.0"
 end
